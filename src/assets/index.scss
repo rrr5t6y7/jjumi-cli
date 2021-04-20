@@ -1,0 +1,25 @@
+:global {
+  #root,
+  .ant-layout {
+    height: 100%;
+  }
+  .ant-menu.ant-menu-dark,
+  .ant-layout-header {
+    background: black;
+  }
+  #allContentBox {
+    padding: 10px;
+  }
+  .innderContentBox {
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+  }
+}
+
+.headerBox {
+  img {
+    width: 50px;
+    padding-top: 10px;
+  }
+}

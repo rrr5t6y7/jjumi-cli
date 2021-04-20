@@ -1,0 +1,14 @@
+:global {
+  .lz-component-popover-content-wrapper {
+    padding-bottom: 5px;
+    .popover-button-wrapper {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .button-cancel {
+      margin-left: 10px;
+    }
+  }
+}

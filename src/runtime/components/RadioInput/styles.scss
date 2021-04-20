@@ -1,0 +1,25 @@
+:global {
+  .lz-component-radio-input {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    line-height: 30px;
+    .ant-radio-group {
+      .ant-radio-wrapper:last-child {
+        margin-right: 0;
+      }
+    }
+    .ant-input {
+      margin: 0 5px 0 -3px;
+      &.short {
+        width: 60px;
+      }
+      &.medium {
+        width: 90px;
+      }
+      &.long {
+        width: 120px;
+      }
+    }
+  }
+}

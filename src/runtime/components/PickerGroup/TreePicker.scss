@@ -1,0 +1,252 @@
+:global {
+  .lz-embed-tree-picker {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .tree-loading {
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      background-color: rgba(#fff, 0.7);
+      &.ant-spin-spinning {
+        display: flex;
+      }
+      .ant-spin-text {
+        margin-top: 10px;
+      }
+    }
+    &.with-transfer {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      margin: 0;
+      .tree-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: stretch;
+        width: 50%;
+        border-right: 1px solid #eee;
+        > .header {
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding: 15px 15px 0 0;
+          .left {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+          }
+          .center {
+            flex: 1;
+          }
+          .bottom {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: 15px;
+          }
+        }
+        > .ant-tree {
+          flex: 1;
+          margin-top: 10px;
+          padding-top: 0;
+          padding-left: 0;
+          overflow: auto;
+          li {
+            position: relative;
+            padding: 6px 0;
+            font-size: 14px;
+            &:first-child {
+              padding-top: 12px;
+            }
+            &[data-hidden='true'] {
+              display: none;
+            }
+            .ant-tree-checkbox {
+              position: absolute;
+              right: 0;
+            }
+            .ant-tree-node-content-wrapper {
+              color: #333;
+            }
+          }
+        }
+      }
+      .transfer-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        width: 50%;
+        > .header {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 15px 0 15px;
+          height: 40px;
+          .left {
+            font-size: 14px;
+          }
+          .right {
+            .text-link {
+              padding-left: 3px;
+            }
+          }
+        }
+        .transfer-list {
+          flex: 1;
+          flex-shrink: 0;
+          overflow: auto;
+          padding: 15px 0 15px 15px;
+          > .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 34px;
+            padding-right: 15px;
+            .title {
+              color: #333;
+            }
+            .icon-deselect {
+              color: #999;
+              &:hover {
+                color: #666;
+              }
+              .anticon {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.read-only {
+      .ant-tree-checkbox {
+        pointer-events: none;
+        filter: grayscale(1);
+        opacity: 0.5;
+      }
+    }
+    &.read-only.without-transfer {
+      .tree-wrapper .ant-tree {
+        // padding-left: 0;
+        .ant-tree-checkbox-inner {
+          background-color: #ccc;
+          border-color: #ccc;
+        }
+        .ant-tree-checkbox {
+          display: none;
+        }
+        > li li {
+          padding-left: 30px;
+          > .ant-tree-switcher {
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &.without-transfer {
+      .tree-wrapper {
+        > .header {
+          height: 40px;
+          padding-left: 17px;
+          .left {
+            display: flex;
+            align-items: center;
+          }
+          .center {
+            flex: 1;
+          }
+          .right {
+            width: 200px;
+          }
+        }
+        .ant-tree {
+          margin-top: 14px;
+          background-image: linear-gradient(to bottom, #f8f8f8, #f8f8f8), linear-gradient(to bottom, #fff 0, #fff 53px, #eee 53px, #eee 54px);
+          background-size: 100% 54px, 100% 54px;
+          background-repeat: no-repeat, repeat-y;
+          > li {
+            ul {
+              margin-top: 14px;
+              padding-left: 0;
+            }
+            > .ant-tree-switcher {
+              display: none;
+            }
+            li {
+              min-height: 54px;
+              position: relative;
+              padding: 16px 0 0 46px;
+              &[data-hidden='true'] {
+                display: none;
+              }
+              &[data-checkable='false'] {
+                > .ant-tree-node-content-wrapper {
+                  margin-left: -18px;
+                }
+              }
+              &:last-child {
+                border-bottom: none;
+              }
+              > span .ant-tree-title {
+                padding-left: 15px;
+              }
+              > .ant-tree-switcher,
+              > .ant-tree-checkbox {
+                position: absolute;
+                top: 15px;
+              }
+              > .ant-tree-switcher {
+                color: #999;
+                left: 40px;
+              }
+              > .ant-tree-checkbox {
+                left: 0;
+              }
+              > .ant-tree-switcher-noop + .ant-tree-checkbox + span {
+                position: relative;
+                left: -15px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .tree-wrapper {
+      flex: 1;
+      flex-shrink: 0;
+      overflow: auto;
+      min-height: 400px;
+      > .header {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .ant-tree {
+        padding: 8px 16px;
+        li .ant-tree-node-content-wrapper {
+          cursor: default;
+          &:hover,
+          &.ant-tree-node-selected {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .lz-tree-picker-modal .lz-embed-tree-picker {
+    height: 500px;
+    &.without-transfer {
+      padding-top: 10px;
+    }
+  }
+}

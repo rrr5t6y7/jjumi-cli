@@ -1,0 +1,156 @@
+
+  .domToImageProduct {
+    margin: 15px 0px 0px 84px;
+    .poster {
+      position: relative;
+      .des {
+        position: absolute;
+        right: 0;
+        width: 192px;
+        bottom: 0;
+        .text {
+          font-size: 12px;
+          color: #999999;
+          margin-top: 3px;
+        }
+      }
+      .posterContainer {
+        .posterContent {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-radius: 5px;
+          padding: 0px 20px;
+          padding-bottom: 0;
+          height: 100%;
+          border-radius: 4px;
+          width: 265px;
+          min-height: 437px;
+          background-color: #FFFFFF;
+          border: 1px solid #e6e6e6;
+          .top {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            .logo {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-right: 11px;
+            }
+            .logoName {
+              font-size: 12px;
+              color: #393939;
+            }
+            .subName {
+              font-size: 9px;
+              color: #999999;
+            }
+          }
+          .middle {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            flex: 1;
+            flex-grow: 1;
+            background: #FFFFFF;
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+            border-radius: 4px;
+            padding: 20px;
+            .img {
+              height: 181px;
+            }
+            .time {
+              font-size: 10px;
+              color: #666666;
+              transform: scale(0.88);
+              margin-left: -12px;
+              white-space: nowrap;
+            }
+            .price {
+              font-size: 12px;
+              color: #FF2332;
+              padding: 10px 0;
+              .salePrice {
+                font-size: 21px;
+              }
+              .marketPrice {
+                color: #999999;
+                padding: 0px 5px;
+                text-decoration: line-through;
+              }
+            }
+            .tagContainer {
+              display: flex;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              .num {
+                border: 1px solid #FF2332;
+                border-radius: 3px;
+                padding: 0px 3px;
+                word-break: keep-all;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                font-size: 10px;
+                color: #FF2332;
+              }
+            }
+          }
+          .codeContainer {
+            padding: 15px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .productNameContent {
+              display: flex;
+              flex: 1;
+              .discount {
+                font-size: 8px;
+                background-color: #FF2332;
+                border-radius: 3px;
+                padding: 0px 3px;
+                margin-right: 3px;
+                margin-top: 2px;
+                height: 18px;
+                font-weight: lighter;
+                color: #FFFFFF;
+              }
+              .productName {
+                font-size: 14px;
+                color: #393939;
+                font-weight: bold;
+                flex: 1;
+                flex-grow: 1;
+              }
+            }
+            .codeContent {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 120px;
+              margin-left: 8px;
+              .code {
+                width: 120px;
+                height: 120px;
+              }
+              .text {
+                font-size: 10px;
+                color: #999999;
+                margin-top: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .down {
+      width: 262px;
+      text-align: center;
+      margin: 15px 0px 9px 0px;
+    }
+  }

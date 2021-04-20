@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="318px" height="468px" viewBox="0 0 318 468" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>icon_poster_decoration</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#C24246" offset="0%"></stop>
+            <stop stop-color="#C24246" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#FE8B6D" offset="0%"></stop>
+            <stop stop-color="#FD6E65" offset="49.7269611%"></stop>
+            <stop stop-color="#FF5367" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="运营（二期）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="分组备份" transform="translate(-141.000000, -135.000000)">
+            <g id="icon_poster_decoration" transform="translate(141.000000, 135.000000)">
+                <path d="M3.99999887,0.236324612 L314.000001,0.00301050374 C316.209137,-0.00166152242 318.001346,1.78785112 318.003008,3.9969895 C318.003009,3.997993 318.003009,3.9989965 318,4 L318,461.316835 C318,463.967802 315.850967,466.116835 313.2,466.116835 L4.8,466.116835 C2.1490332,466.116835 1.18709693e-14,463.967802 0,461.316835 L0,4.23933512 C0.00301163749,2.0313717 1.79203834,0.240998019 3.99999887,0.236324612 Z" id="路径-4" fill="url(#linearGradient-1)"></path>
+                <path d="M20,12 L298,12 C302.418278,12 306,15.581722 306,20 L306,448 C306,452.418278 302.418278,456 298,456 L20,456 C15.581722,456 12,452.418278 12,448 L12,20 C12,15.581722 15.581722,12 20,12 Z" id="矩形" fill="#FFFFFF"></path>
+                <path d="M0,294 C46,348.204294 100.4,375.815625 163.2,376.833994 C226,377.852363 277.6,350.241031 318,294 L318,463.2 C318,465.850967 315.850967,468 313.2,468 L4.8,468 C2.1490332,468 1.27591477e-14,465.850967 0,463.2 L0,294 Z" fill="url(#linearGradient-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

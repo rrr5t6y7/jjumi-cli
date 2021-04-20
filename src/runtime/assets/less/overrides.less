@@ -1,0 +1,499 @@
+/*
+ * @Author: 叶坤  
+ * @Date: 2019-07-24 15:26:47   
+ * @Last Modified by: WangGang
+ * @Last Modified time: 2020-06-06 14:00:10
+ */
+// 自定义变量
+// 主色
+@calcium-primary-color: #1976de;
+// 用于辅助重要的文字信息、页面标题、icon
+@calcium-auxiliary-color: #fea54c;
+// 用于一级菜单背景色
+@calcium-menu-color: #1976de;
+//用于主要强调和突出的文字、按钮文字
+@calcium-base-color: #323232;
+// 用于失败文字、icon
+@calcium-error-color: #fb3a3a;
+// 用于警告文字、icon
+@calcium-warning-color: #f4931f;
+// 用于提示成功文字、icon
+@calcium-success-color: #28a745;
+// 用于次要级文字信息
+@calcium-normal-color: #666;
+//用于输入框默认提示语、普通级文字信息、icon
+@calcium-holder-color: #999;
+// 用于输入框和按钮描边
+@calcium-border-color: #ccc;
+// 用于内容页的分割线
+@calcium-hr-color: #f2f2f2;
+// 背景色
+@calcium-bg-color: #f6f6f6;
+// 用于内容页灰色底，侧边栏菜单选中
+@calcium-gray-bg-color: #f8f8f8;
+// 用于侧栏菜单底色、文字
+@calcium-white-color: #fff;
+
+// 覆盖antd
+// 主色
+@primary-color: @calcium-primary-color;
+// 信息
+@info-color: @calcium-primary-color;
+// 成功
+@success-color: @calcium-success-color;
+// 正在处理
+@processing-color: @calcium-primary-color;
+// 错误
+@error-color: @calcium-error-color;
+// 高亮
+@highlight-color: @calcium-error-color;
+// 警告
+@warning-color: @calcium-warning-color;
+// 基本
+@normal-color: @calcium-base-color;
+// 白
+@white: @calcium-white-color;
+// 黑
+@black: #000;
+// active颜色
+@active-color: #1976de;
+// 配置
+@font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial,
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+@text-color: @normal-color;
+@font-size-base: 12px;
+@font-size-lg: @font-size-base + 2px;
+@font-size-sm: 12px;
+// 标题和所选项目的背景
+@background-color-light: hsv(0, 0, 98%);
+// 默认灰色背景色
+@background-color-base: hsv(0, 0, 96%);
+// 禁用状态
+@disabled-color: fade(#000, 25%);
+@disabled-bg: @background-color-base;
+@disabled-color-dark: fade(#fff, 35%);
+//内边距变量
+@padding-lg: 24px; // lg
+@padding-md: 16px; // md
+@padding-sm: 10px; // sm
+@padding-xs: 8px; //  xs
+
+//所有窗体控件的垂直填充
+@control-padding-horizontal: @padding-sm;
+// 边框
+@border-color-base: @calcium-border-color; // 基本边框概述组件
+
+//btn   按钮
+@btn-height-base: 32px;
+@btn-disable-color: @calcium-holder-color;
+// @btn-disable-bg: @border-color-base;
+@btn-disable-border: @calcium-border-color;
+@btn-padding-base: 0 @padding-md - 2px;
+
+.ant-btn {
+  min-width: 54px;
+
+  &.ant-btn-circle {
+    min-width: auto;
+  }
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  color: @white;
+  background-color: fade(@calcium-primary-color, 70);
+  border-color: fade(@calcium-primary-color, 70);
+}
+
+.ant-btn-primary:active,
+.ant-btn-primary.active {
+  color: @white;
+  background-color: @active-color;
+  border-color: @active-color;
+}
+
+.ant-message-notice-content {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.ant-message-custom-content {
+  min-width: 200px;
+  padding: 10px 15px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px fade(#000, 10);
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 24px;
+  text-align: left;
+  i.anticon {
+    color: inherit;
+    margin-right: 16px;
+  }
+}
+.ant-message-error {
+  color: @calcium-error-color;
+}
+.ant-message-success {
+  color: @calcium-success-color;
+}
+.ant-message-loading {
+  color: @calcium-success-color;
+}
+.ant-message-warning {
+  color: @calcium-warning-color;
+}
+.ant-message-info {
+  color: @calcium-primary-color;
+}
+
+body .ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+body .ant-modal-content {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+// input    输入框
+@form-item-margin-bottom: 15px;
+@input-height-base: 32px;
+@input-placeholder-color: @calcium-holder-color;
+@input-padding-horizontal: @control-padding-horizontal;
+.lz-input-sm {
+  width: 80px !important;
+}
+.lz-input-md {
+  width: 160px !important;
+}
+.lz-input-lg {
+  width: 400px !important;
+}
+
+//modal     对话弹出框
+@modal-body-padding: 15px;
+
+.ant-modal {
+  &.lz-sm {
+    width: 320px !important;
+  }
+
+  &.lz-md {
+    width: 480px !important;
+  }
+
+  &.lz-lg {
+    width: 900px !important;
+
+    .ant-modal-header {
+      padding: 17px 15px;
+    }
+
+    .ant-modal-close-x {
+      width: 56px;
+      height: 56px;
+      line-height: 56px;
+    }
+  }
+
+  // overflow: hidden;
+  padding-bottom: 0;
+
+  .ant-modal-header {
+    padding: 9px 15px;
+  }
+
+  .ant-modal-close-x {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .ant-modal-title {
+    font-weight: bold;
+    color: @normal-color;
+  }
+
+  .ant-modal-body {
+    min-height: 80px;
+    color: @calcium-normal-color;
+  }
+
+  .ant-modal-body p {
+    margin-bottom: 0;
+  }
+
+  .ant-modal-footer {
+    padding: 0 15px 15px 15px;
+    border-top: none;
+  }
+
+  .ant-modal-footer button + button {
+    margin-left: 10px;
+  }
+}
+
+// notification     通知提醒框
+.ant-notification {
+  width: 260px;
+  min-height: 110px;
+
+  .ant-notification-notice {
+    padding: 15px;
+  }
+
+  .ant-notification-notice-close {
+    top: 6px;
+    right: 6px;
+  }
+
+  .ant-notification-notice-message {
+    color: @normal-color;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+
+  .ant-notification-notice-description {
+    color: @calcium-normal-color;
+    padding-top: 10px;
+    min-height: 60px;
+  }
+
+  .ant-notification-notice-closable .ant-notification-notice-message {
+    padding-right: 5px;
+  }
+
+  .ant-notification-notice-btn {
+    margin-top: 10px;
+  }
+
+  .ant-btn {
+    min-width: 54px;
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+//popover   气泡框
+@popover-color: @calcium-normal-color;
+
+.ant-popover {
+  min-width: 180px;
+
+  .ant-popover-inner-content {
+    padding: 15px;
+
+    .ant-popover-message {
+      padding: 0 0 15px;
+
+      .anticon {
+        top: 3px;
+        display: none;
+      }
+
+      .ant-popover-message-title {
+        max-width: 150px;
+        line-height: 17px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .ant-popover-buttons {
+    margin-bottom: 0;
+
+    .ant-btn {
+      min-width: 36px;
+      height: 20px;
+      line-height: 18px;
+      font-size: 10px;
+      box-sizing: border-box;
+      padding: 0 5px;
+      margin-left: 10px;
+    }
+  }
+}
+
+//table     表格
+@table-header-bg: @calcium-hr-color;
+@table-header-color: @calcium-normal-color;
+
+.ant-table-wrapper {
+  .ant-table-body {
+    .ant-table-thead {
+      & > tr > th {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//Message   全局提示
+@message-notice-content-padding: 11px 15px;
+
+.ant-message {
+  .ant-message-notice-content {
+    min-width: 200px;
+    max-width: 772px;
+  }
+
+  .anticon {
+    margin-right: 6px;
+  }
+}
+
+//Tabs  选项卡
+@tabs-horizontal-margin: 0 15px 0 0;
+@tabs-horizontal-padding: 10px 15px;
+@tabs-title-font-size: 14px;
+
+.ant-tabs {
+  .ant-tabs-tab {
+    min-width: 72px;
+    height: 40px;
+  }
+}
+
+// timeline     时间轴
+.ant-timeline {
+  .ant-timeline-item-content {
+    margin: 0 0 0 20px;
+  }
+}
+
+// dropdown     下拉框
+@dropdown-selected-color: rgba(25, 118, 210, 0.1);
+
+.ant-dropdown-trigger {
+  margin-right: 15px;
+}
+
+.ant-dropdown-trigger:nth-last-child(1) {
+  margin-right: 0;
+}
+
+// List     列表
+@list-item-meta-avatar-margin-right: 15px;
+
+.ant-list {
+  margin: 20px 0;
+  min-width: 772px;
+
+  &.ant-list-bordered {
+    .ant-list-header,
+    .ant-list-footer {
+      padding: 11px 15px;
+    }
+
+    .ant-list-header {
+      padding-bottom: 10px;
+    }
+
+    .ant-list-item {
+      padding: 11px 15px 10px;
+    }
+  }
+
+  .ant-list-item {
+    padding: 15px;
+
+    .ant-list-item-meta {
+      .ant-avatar {
+        width: 30px;
+        height: 30px;
+      }
+
+      .ant-list-item-meta-content {
+        .ant-list-item-meta-title {
+          margin-bottom: 0;
+          line-height: 17px;
+        }
+
+        .ant-list-item-meta-description {
+          color: @calcium-holder-color;
+          line-height: 17px;
+        }
+      }
+    }
+  }
+}
+
+// Spin     加载
+@spin-dot-size-sm: 15px;
+@spin-dot-size: 24px;
+@spin-dot-size-lg: 40px;
+
+.ant-spin {
+  &.lz-md-1 {
+    .ant-spin-dot {
+      font-size: 24px;
+
+      i {
+        width: 9px;
+        height: 9px;
+      }
+    }
+  }
+
+  &.lz-md-2 {
+    .ant-spin-dot {
+      font-size: 30px;
+
+      i {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.ant-spin-nested-loading {
+  & > div {
+    & > .ant-spin {
+      color: @calcium-holder-color;
+
+      .ant-spin-text {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+// Upload  上传
+.ant-upload.ant-upload-drag {
+  max-width: 400px;
+
+  .ant-upload {
+    min-height: 180px;
+    padding: 15px;
+
+    p.ant-upload-drag-icon {
+      margin-bottom: 15px;
+    }
+
+    p.ant-upload-text {
+      color: @normal-color;
+      margin-bottom: 6px;
+    }
+
+    p.ant-upload-hint {
+      color: @calcium-holder-color;
+    }
+  }
+}
+
+.ant-upload-list {
+  .ant-upload-list-item {
+    margin-top: 10px;
+  }
+}
+
+//time-pick 时间选择框
+@time-picker-selected-bg: hsv(0, 0, 96%);
+
+.ant-time-picker-panel-select {
+  li.ant-time-picker-panel-select-option-disabled {
+    color: @calcium-border-color;
+    font-weight: normal;
+  }
+}

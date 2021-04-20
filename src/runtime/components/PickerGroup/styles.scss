@@ -1,0 +1,130 @@
+:global {
+  .lz-embed-picker-group {
+    display: flex;
+    flex-direction: column;
+    width: 1006px;
+    font-size: 14px;
+    .picker-header {
+      display: flex;
+      align-items: center;
+      height: 54px;
+      border-bottom: 1px solid #eee;
+      .picker-title {
+        width: auto;
+        margin: 0;
+        padding: 0 16px;
+        color: #323232;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .header-center {
+        flex: 1;
+      }
+      .button-close-picker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 54px;
+        background-color: transparent;
+        border: none;
+        color: #999;
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        &:hover {
+          color: #666;
+        }
+        .anticon-plus {
+          transform: rotate(45deg);
+        }
+      }
+    }
+    .picker-body {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: stretch;
+      min-height: 500px;
+      .section-titles {
+        flex-shrink: 0;
+        width: 130px;
+        padding: 10px;
+        border-right: 1px solid #eee;
+        > .item {
+          height: 34px;
+          margin: 5px 0;
+          padding: 0 10px;
+          border-radius: 4px;
+          color: #333;
+          font-size: 14px;
+          line-height: 34px;
+          cursor: pointer;
+          &.active {
+            background-color: #f2f2f2;
+            font-weight: bold;
+          }
+        }
+      }
+      .section-content {
+        display: none;
+        flex: 1;
+        flex-shrink: 0;
+        padding: 0 16px;
+        &.active {
+          display: block;
+        }
+        .select-tab-content {
+          height: 460px;
+          overflow: auto;
+        }
+        .lz-embed-table-picker {
+          height: 532px;
+          overflow: auto;
+          &.with-import {
+            overflow: hidden;
+          }
+          .ant-table-placeholder {
+            border: none;
+          }
+        }
+
+        .lz-embed-tree-picker {
+          height: 500px;
+          margin: 16px 0;
+          overflow: auto;
+          &.with-transfer {
+            height: 532px;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .picker-footer {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      border-top: 1px solid #eee;
+      .footer-left {
+        flex: 1;
+      }
+      .selected-count {
+        color: #323232;
+        font-size: 14px;
+        > .item {
+          &:last-child::after {
+            content: none;
+          }
+          &::after {
+            content: '、';
+          }
+        }
+      }
+      .footer-buttons {
+        margin-right: 15px;
+        .ant-btn {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

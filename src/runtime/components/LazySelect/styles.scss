@@ -1,0 +1,32 @@
+:global {
+  .lz-component-lazy-selector-dropdown {
+    .lz-dropdown-searcher {
+      position: relative;
+      display: flex;
+      margin: 0;
+      .anticon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 36px;
+        height: 36px;
+        color: #999;
+        font-size: 14px;
+        line-height: 36px;
+      }
+      .ant-input {
+        flex: 1 !important;
+        width: auto !important;
+        padding-left: 32px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 3px 3px 0 0;
+        box-shadow: none;
+        &:focus {
+          border-bottom-color: #ccc !important;
+        }
+      }
+    }
+  }
+}

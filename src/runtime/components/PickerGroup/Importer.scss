@@ -1,0 +1,33 @@
+:global {
+  .lz-drag-importer {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-height: 450px;
+    > .header {
+      display: flex;
+      .left {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        .ant-select{
+          margin-right: 5px;
+        }
+      }
+      .right {
+        flex: 1;
+      }
+    }
+    > .footer {
+      margin-top: 10px;
+      text-align: center;
+      .text-link {
+        color: $COLOR_PRIMARY;
+        cursor: pointer;
+        &:hover {
+          color: darken($COLOR_PRIMARY, 5);
+        }
+      }
+    }
+  }
+}

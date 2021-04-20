@@ -1,0 +1,26 @@
+$FORBIDDEN_IMAGE: '~@lingzhi/tossjs/runtime/assets/images/forbidden.png';
+
+:global {
+  .page-forbidden {
+    overflow: hidden;
+    .component-forbidden {
+      display: flex;
+      width: 600px;
+      height: 420px;
+      margin: 150px auto 0 auto;
+      margin: 25vh auto 0 auto;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 296px;
+      background-image: url($FORBIDDEN_IMAGE);
+      background-position: 50% 0%;
+      background-repeat: no-repeat;
+      background-size: 276px 276px;
+    }
+    .forbidden-text {
+      padding-bottom: 10px;
+      color: #999;
+      font-size: 16px;
+    }
+  }
+}

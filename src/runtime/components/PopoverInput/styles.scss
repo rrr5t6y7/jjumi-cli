@@ -1,0 +1,18 @@
+:global {
+  .lz-component-popover-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .text-prefix {
+      margin-right: 8px;
+    }
+    .text-suffix {
+      margin-left: 8px;
+    }
+    .error-tip {
+      position: absolute;
+      bottom: -18px;
+      white-space: nowrap;
+    }
+  }
+}

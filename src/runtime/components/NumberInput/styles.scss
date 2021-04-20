@@ -1,0 +1,48 @@
+:global {
+  .lz-component-number-input {
+    position: relative;
+    width: 118px;
+    height: 32px;
+    .ant-input {
+      width: 118px;
+      padding-right: 18px;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      position: absolute;
+      right: 1px;
+      bottom: 1px;
+      top: 1px;
+      border-left: 1px solid #ccc;
+      .ant-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 16px;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
+        &:first-child {
+          border-bottom: 1px solid #ccc;
+          border-radius: 0 3px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 3px 0;
+        }
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #666;
+          line-height: normal;
+          transform: scale(0.7);
+        }
+      }
+    }
+  }
+}

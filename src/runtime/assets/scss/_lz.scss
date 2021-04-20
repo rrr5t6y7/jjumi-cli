@@ -1,0 +1,291 @@
+:global {
+  /** modal 隐藏取消按钮，适用于原型的单按钮弹窗 */
+  .lz-modal-only-ok-btn {
+    .ant-modal-footer {
+      button:first-child {
+        display: none;
+      }
+    }
+  }
+
+  /** 居中覆盖式的loading */
+  .lz-centered-spinning {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(#fff, 0.8);
+    pointer-events: none;
+    &.ant-spin-spinning {
+      pointer-events: auto;
+    }
+    .ant-spin-text {
+      margin-top: 16px;
+    }
+  }
+
+  .lz-table {
+    table {
+      font-size: 12px;
+    }
+
+    thead {
+      color: #666;
+      font-weight: 600;
+    }
+
+    tbody {
+      color: #323232;
+    }
+
+    .ant-table-thead {
+      tr {
+        th {
+          padding: 11px 16px;
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      tr {
+        td {
+          padding: 11px 16px;
+        }
+      }
+    }
+
+    .ant-table-selection-column {
+      text-align: left !important;
+      padding-left: 15px !important;
+    }
+  }
+
+  .lz-modal-tabs {
+    .ant-tabs-top-bar {
+      margin-bottom: 0;
+    }
+    .ant-tabs-tab {
+      height: 50px;
+      padding: 10px 25px;
+      color: #333;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  .ant-table-wrapper {
+    .ant-table-body {
+      .ant-table-thead {
+        & > tr > th {
+          font-weight: bold;
+        }
+      }
+    }
+    .ant-table-placeholder {
+      .lz-antd-table-empty-placeholder {
+        height: 100px;
+        margin: 10px 0;
+        padding-top: 60px;
+        background-image: url($publicPathPrefix + '/static/images/icons/icon_table_empty.png');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        background-size: 60px 60px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  .has-error > .ant-form-item-children > .lz-custom-form-component {
+    // margin-bottom: 5px;
+
+    .ant-input,
+    .ant-time-picker-input {
+      &:focus {
+        border-color: $COLOR_ANTD_FOCUS;
+        box-shadow: none;
+      }
+      &:not([value='']) {
+        border-color: #ccc;
+
+        &:hover {
+          border-color: $COLOR_ANTD_FOCUS;
+        }
+
+        &:focus {
+          border-color: $COLOR_ANTD_FOCUS;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .ant-select .ant-select-selection {
+      border-color: #ccc;
+
+      &:hover {
+        border-color: $COLOR_ANTD_FOCUS;
+      }
+
+      &:focus {
+        border-color: $COLOR_ANTD_FOCUS;
+      }
+
+      .ant-select-arrow {
+        color: rgba(#000, 0.25);
+      }
+    }
+  }
+
+  // 模态框组件样式
+  .lz-component-modal-picker {
+    .page-tab {
+      .ant-tabs-tab {
+        height: 48px;
+        padding: 0 38px;
+        color: $COLOR_TEXT_EMPHASIZED;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 48px;
+      }
+      .ant-tabs-top-bar {
+        margin-bottom: 5px;
+      }
+    }
+    .ant-table-content {
+      min-height: 400px;
+    }
+    .ant-table-body table {
+      table-layout: fixed;
+    }
+    .ant-table-empty .ant-table-placeholder {
+      border-bottom: none;
+    }
+    .modal-content {
+      min-height: 500px;
+      padding: 0 15px;
+      overflow: auto;
+    }
+    .brand-name {
+      overflow: hidden;
+      font-weight: normal;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .modal-footer {
+      position: relative;
+      height: 60px;
+      padding: 15px;
+      .button-close {
+        float: right;
+      }
+    }
+  }
+  .lz-component-modal-picker-entry {
+    margin-bottom: 10px;
+    .selected-amount {
+      display: block;
+      margin-top: 5px;
+      color: #666;
+    }
+  }
+  .lz-component-modal-picker-modal {
+    .ant-modal-body {
+      padding: 0;
+    }
+  }
+
+  .edui-default {
+    * {
+      box-sizing: content-box;
+    }
+    .edui-bordereraser {
+      display: none;
+    }
+    .edui-default.edui-popup-content {
+      border-radius: 0 0 5px 5px;
+    }
+    .edui-toolbar .edui-combox-body .edui-default.edui-arrow {
+      width: 12px;
+    }
+  }
+  .edui-default .edui-editor-toolbarboxouter {
+    line-height: 20px;
+  }
+  .edui-dialog {
+    .edui-default .edui-dialog-body {
+      height: auto !important;
+      padding: 0;
+      background-color: #fff;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      .edui-dialog-shadow {
+        display: none;
+      }
+      .edui-dialog-titlebar {
+        height: 40px;
+        background-image: none;
+        border-bottom-color: #e8e8e8;
+        cursor: default;
+        .edui-dialog-draghandle {
+          height: 40px;
+          line-height: 40px;
+          pointer-events: none;
+        }
+        .edui-dialog-caption {
+          padding-left: 15px;
+          color: #323232;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        .edui-dialog-closebutton {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      .edui-dialog-foot {
+        padding: 0 12px;
+        background-color: transparent;
+        .edui-dialog-buttons {
+          position: static;
+          float: right;
+          .edui-button {
+            float: right;
+            border-radius: 4px;
+            transition: 0.3s;
+          }
+          .edui-button-body {
+            width: 54px;
+            height: 28px;
+            background-image: none;
+            cursor: pointer;
+            .edui-label {
+              line-height: 28px;
+              cursor: pointer;
+            }
+          }
+          .edui-cancelbutton {
+            border: solid 1px #ccc;
+            &:hover {
+              color: $COLOR_PRIMARY;
+              border-color: $COLOR_PRIMARY;
+            }
+          }
+          .edui-okbutton {
+            margin-right: 0;
+            color: #fff;
+            background-color: $COLOR_PRIMARY;
+            border: solid 1px $COLOR_PRIMARY;
+            &:hover {
+              background-color: lighten($COLOR_PRIMARY, 2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
