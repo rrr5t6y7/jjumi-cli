@@ -1,5 +1,22 @@
 // import IndexPage from './src/pages/index/index';
 
+const frames: any = [];
+// const context = require.context('./assets/images', false, /frame_\d+.png/);
+// context.keys().forEach((k) => {
+//   frames.push(context(k));
+// });
+
+console.log(frames);
+
+// const routersList: any = [];
+// function importAll(r: any) {
+//   r.keys().forEach((key: any) => routersList.push(r(key).default) || r(key));
+// }
+// const getAllRouter = require.context('./src/models', false, /\.js$/);
+
+// importAll(getAllRouter);
+// console.log(routersList);
+
 const basePath = '/admin';
 
 export default [
@@ -9,9 +26,14 @@ export default [
     redirect: basePath,
   },
   {
-    path: '/admin',
+    path: basePath,
     component: '@/layouts/index',
     routes: [
+      {
+        exact: true,
+        path: `${basePath}/login`,
+        component: '@/pages/login',
+      },
       {
         exact: true,
         path: `${basePath}/user_manage`,
@@ -36,8 +58,10 @@ export default [
         component: '@/pages/goodmanage/goodquality/index.jsx',
         name: '商品质量',
       },
+      { path: '*', component: '@/pages/exception' },
     ],
   },
+  { path: '*', redirect: `${basePath}/exception` },
 ];
 
 export const menus = [
