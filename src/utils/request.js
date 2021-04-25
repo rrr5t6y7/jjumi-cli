@@ -44,7 +44,7 @@ const errorHandler = (error) => {
 const request = extend({
   errorHandler,
   // 默认错误处理
-  credentials: 'include', // 默认请求是否带上cookie
+  // credentials: 'include', // 默认请求是否带上cookie
 });
 
 // request.headers = {};
@@ -56,7 +56,7 @@ request.interceptors.request.use(async (url, options) => {
   console.log(options);
 
   const headers = {
-    'Content-Type': 'multipart/x-www-form-urlencoded',
+    // 'Content-Type': 'multipart/form-data',
   };
   return {
     url: url,

@@ -7,15 +7,15 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import logoHead from '../../../assets/images/loginHead.jpeg';
 
 const NormalLoginForm = () => {
+  // const [form] = Form.useForm();
   const [imgKey, updateKey] = useState(Date.now());
   const fetchLogin = (values: object) => {
+    const formdata = new FormData();
+    formdata.append('account', values.account);
+    formdata.append('password', values.password);
+    formdata.append('captchaId', values.captchaId);
     request
-      .post('http://59.110.217.39:8050/login', {
-        data: {
-          ...values,
-        },
-        header: { 'Content-Type': 'multipart/form-data' },
-      })
+      .post('http://59.110.217.39:8050/login', { data: formdata })
       .then(function (response) {
         console.log(response);
       })
