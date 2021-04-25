@@ -26,7 +26,7 @@ const NormalLoginForm = () => {
 
   const fetchCaptcha = () => {
     request
-      .get('http://59.110.217.39:8050/captcha', {
+      .get('/captcha', {
         params: {},
       })
       .then(function (response) {
@@ -40,7 +40,7 @@ const NormalLoginForm = () => {
   };
 
   useEffect(() => {
-    fetchCaptcha();
+    // fetchCaptcha();
   }, []);
 
   const onFinish = (values: object) => {
@@ -88,7 +88,7 @@ const NormalLoginForm = () => {
         </Form.Item>
         <div className={styles.captchaIdImgSty}>
           <img
-            src="http://www.zchiu.ltd:8050/captcha"
+            src="http://localhost:8000/captcha"
             onClick={updateImg}
             key={imgKey}
           />

@@ -28,4 +28,11 @@ export default defineConfig({
   theme: {
     'primary-color': '#1DA57A',
   },
+  proxy: {
+    '/': {
+      target: 'http://www.zchiu.ltd',
+      pathRewrite: { '^/api': '' },
+      changeOrigin: true,
+    },
+  },
 });
