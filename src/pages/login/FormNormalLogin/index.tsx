@@ -1,53 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.less';
 import { Form, Input, Button, Checkbox } from 'antd';
-// import request from 'umi-request';
 import request from '@/utils/request.js';
+import { history } from 'umi';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import logoHead from '../../../assets/images/loginHead.jpeg';
 
 const NormalLoginForm = () => {
-  // const [form] = Form.useForm();
   const [imgKey, updateKey] = useState(Date.now());
-  const fetchLogin = (values: object) => {
+
+  useEffect(() => {
+    localStorage.getItem('x-auth-token');
+    // const token =
+  }, []);
+
+  // 登录接口
+  const fetchLogin = (values: object = {}) => {
     const formdata = new FormData();
     formdata.append('account', values.account);
     formdata.append('password', values.password);
     formdata.append('captchaId', values.captchaId);
+
+    interface Response {
+      errcode: number;
+      token: string;
+    }
     request
-      .post('http://59.110.217.39:8050/login', { data: formdata })
-      .then(function (response) {
+      .post('/api/login', { data: formdata })
+      .then((response: Response) => {
         console.log(response);
+        const { errcode, token } = response;
+        if (errcode === 0) {
+          history.replace('/admin');
+          localStorage.setItem('x-auth-token', token);
+        }
       })
-      .catch(function (error) {
+      .catch(function (error: any) {
         console.log(error);
       });
   };
-
-  const fetchCaptcha = () => {
-    request
-      .get('/captcha', {
-        params: {},
-      })
-      .then(function (response) {
-        let a = window.URL.createObjectURL(response);
-        console.log(a);
-        // console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    // fetchCaptcha();
-  }, []);
 
   const onFinish = (values: object) => {
-    console.log('Received values of form: ', values);
     fetchLogin(values);
   };
 
+  // 更新验证码
   const updateImg = () => {
     updateKey(Date.now());
   };
@@ -63,11 +60,11 @@ const NormalLoginForm = () => {
       >
         <Form.Item
           name="account"
-          rules={[{ required: true, message: '请输入用户名' }]}
+          rules={[{ required: true, message: '请输入英雄总部登记名' }]}
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="请输入用户名"
+            placeholder="请输入英雄总部登记名"
           />
         </Form.Item>
         <Form.Item
@@ -87,11 +84,7 @@ const NormalLoginForm = () => {
           <Input style={{ width: 200 }} placeholder="请输入验证码" />
         </Form.Item>
         <div className={styles.captchaIdImgSty}>
-          <img
-            src="http://localhost:8000/captcha"
-            onClick={updateImg}
-            key={imgKey}
-          />
+          <img src="/api/captcha" onClick={updateImg} key={imgKey} />
         </div>
         {/*<Form.Item>
          <Form.Item name="remember" valuePropName="checked" noStyle>

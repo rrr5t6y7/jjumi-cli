@@ -19,6 +19,7 @@ console.log(frames);
 
 const basePath = '/admin';
 
+// 路由
 export default [
   {
     exact: true,
@@ -36,67 +37,151 @@ export default [
       },
       {
         exact: true,
-        path: `${basePath}/user_manage`,
-        component: '@/pages/usermanage',
-        name: '用户管理',
+        path: `${basePath}/task_manage`,
+        component: '@/pages/taskmanage',
+        name: '任务领取',
       },
       {
         exact: true,
-        path: `${basePath}/good_manage`,
-        component: '@/pages/goodmanage',
-        name: '商品管理',
-      },
-      {
-        exact: true,
-        path: `${basePath}/good_manage/good_number`,
-        component: '@/pages/goodmanage/goodnumber',
+        path: `${basePath}/taskmanage/good_number`,
+        component: '@/pages/taskmanage/goodnumber',
         name: '商品数量',
       },
       {
         exact: true,
-        path: `${basePath}/good_manage/good_quality`,
-        component: '@/pages/goodmanage/goodquality/index.jsx',
+        path: `${basePath}/taskmanage/good_quality`,
+        component: '@/pages/taskmanage/goodquality/index.jsx',
         name: '商品质量',
       },
-      { path: '*', component: '@/pages/exception' },
+      {
+        exact: true,
+        path: `${basePath}/reward_manage`,
+        component: '@/pages/rewardmanage',
+        name: '薪酬赏金',
+      },
+      {
+        exact: true,
+        path: `${basePath}/training`,
+        component: '@/pages/training',
+        name: '训练场',
+      },
+      {
+        exact: true,
+        path: `${basePath}/exam`,
+        component: '@/pages/exam',
+        name: '评级考试',
+      },
+      {
+        exact: true,
+        path: `${basePath}/monster_level`,
+        component: '@/pages/monsterLevel',
+        name: '怪人等级',
+      },
+      {
+        exact: true,
+        path: `${basePath}/monster_association`,
+        component: '@/pages/monsterAssociation',
+        name: '怪人协会',
+      },
+      {
+        exact: true,
+        path: `${basePath}/punishment_for_violation_of_regulations`,
+        component: '@/pages/punishmentForViolationOfRegulations',
+        name: '英雄违规处罚',
+      },
+      {
+        exact: true,
+        path: `${basePath}/personal`,
+        component: '@/pages/personal',
+        name: '英雄个人中心',
+      },
+      {
+        exact: true,
+        path: `${basePath}/service`,
+        component: '@/pages/service',
+        name: '客服反馈',
+      },
+      {
+        exact: true,
+        path: `${basePath}/Hero_management_association`,
+        component: '@/pages/heroManagementAssociation',
+        name: '英雄管理协会简介',
+      },
+
+      { path: '*', component: '@/pages/exception/404' },
     ],
   },
-  { path: '*', redirect: `${basePath}/exception` },
+  { path: '*', redirect: `${basePath}/exception/404` },
 ];
 
+// 菜单
 export const menus = [
   // 菜单的配置项，用于动态渲染 key:	唯一标志 title: 菜单项值 path：用于路由跳转
   {
-    key: 'good_manage',
-    title: '商品管理',
+    key: 'task_manage',
+    title: '任务领取',
     children: [
       {
         key: 'good_number',
         title: '商品数量',
-        path: `${basePath}/good_manage/good_number`,
+        path: `${basePath}/task_manage/good_number`,
       },
       {
         key: 'good_quality',
         title: '商品质量',
-        path: `${basePath}/good_manage/good_quality`,
+        path: `${basePath}/task_manage/good_quality`,
       },
     ],
   },
   {
-    key: 'address_manage',
-    title: '地址管理',
+    key: 'reward_manage',
+    title: '薪酬赏金',
     children: [
-      { key: 'my_address', title: '我的地址', path: `${basePath}/my_address` },
+      {
+        key: 'my_address',
+        title: '我的地址',
+        path: `${basePath}/reward_manage/my_address`,
+      },
     ],
   },
   {
-    key: 'collect_manage',
-    title: '收藏管理',
-    path: `${basePath}/collect_manage`,
+    exact: true,
+    path: `${basePath}/training`,
+    title: '训练场',
   },
   {
-    key: 'user_manage',
-    title: '用户管理',
-    path: `${basePath}/user_manage`,
+    exact: true,
+    path: `${basePath}/exam`,
+    title: '评级考试',
+  },
+  {
+    exact: true,
+    path: `${basePath}/monster_level`,
+    title: '怪人等级',
+  },
+  {
+    exact: true,
+    path: `${basePath}/monster_association`,
+    title: '怪人协会',
+  },
+  {
+    exact: true,
+    path: `${basePath}/punishment_for_violation_of_regulations`,
+    title: '英雄违规处罚',
+  },
+  {
+    exact: true,
+    path: `${basePath}/personal`,
+    title: '英雄个人中心',
+  },
+  {
+    exact: true,
+    path: `${basePath}/service`,
+    title: '客服反馈',
+  },
+  {
+    exact: true,
+    path: `${basePath}/Hero_management_association`,
+    title: '英雄管理协会简介',
   },
 ];

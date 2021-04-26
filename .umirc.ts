@@ -29,8 +29,8 @@ export default defineConfig({
     'primary-color': '#1DA57A',
   },
   proxy: {
-    '/': {
-      target: 'http://www.zchiu.ltd',
+    '/api': {
+      target: 'http://www.zchiu.ltd:8050',
       pathRewrite: { '^/api': '' },
       changeOrigin: true,
     },

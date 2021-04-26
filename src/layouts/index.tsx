@@ -13,18 +13,27 @@ const { SubMenu } = Menu; // 子菜单
 const { Header, Content, Sider } = Layout; // 顶部布局， 内容部分， 侧边栏
 
 export default function LayoutDom(props: any) {
+  // 判断当前页是否登录页面
   const [isLogin, updateLogin] = useState(false);
+  // 判断当前页是否首页
   const [isIndex, updateIndex] = useState(false);
 
   useEffect(() => {
     const { location } = props;
     const { pathname } = location;
+    console.log(pathname);
     if (pathname === '/admin/login') {
       updateLogin(true);
     } else if (pathname === '/admin') {
+      updateLogin(false);
       updateIndex(true);
+    } else {
+      updateIndex(false);
+      updateLogin(false);
     }
-  }, []);
+  }, [props.location.pathname]);
+
+  // 菜单方法
   function getMenuItem(menuArr: any) {
     // 获取菜单项
     return _.map(menuArr, (route) => {
@@ -45,6 +54,7 @@ export default function LayoutDom(props: any) {
     });
   }
 
+  // 侧边栏框架
   function sideBarRender() {
     return (
       <Sider width={180} style={{ height: 'calc(100vh-48px)' }}>
@@ -59,8 +69,7 @@ export default function LayoutDom(props: any) {
     );
   }
 
-  console.log(isLogin);
-  console.log(props.children);
+  console.log(isIndex);
   return isLogin ? (
     <Login />
   ) : (

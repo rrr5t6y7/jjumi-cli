@@ -1,11 +1,7 @@
-// An highlighted block
-/**
- * request 网络请求工具
- * 更详细的 api 文档: https://github.com/umijs/umi-request
- */
 import { extend } from 'umi-request';
 import { notification } from 'antd';
 
+// 返回code
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
   201: '新建或修改数据成功。',
@@ -55,31 +51,20 @@ const request = extend({
 request.interceptors.request.use(async (url, options) => {
   console.log(options);
 
-  const headers = {
-    // 'Content-Type': 'multipart/form-data',
-  };
-  return {
-    url: url,
-    options: { ...options, headers },
-  };
-  return;
+  // const headers = {
+  //   // 'Content-Type': 'multipart/form-data',
+  // };
   let c_token = localStorage.getItem('x-auth-token');
   if (c_token) {
     const headers = {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      // 'Content-Type': 'application/json',
       'x-auth-token': c_token,
     };
     return {
       url: url,
-      options: { ...options },
+      options: { ...options, headers },
     };
   } else {
-    // const headers = {
-    //   'Content-Type': 'application/json',
-    //   Accept: 'application/json',
-    //   'x-auth-token': c_token,
-    // };
     return {
       url: url,
       options: { ...options },
