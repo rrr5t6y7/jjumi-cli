@@ -6,15 +6,15 @@ const frames: any = [];
 //   frames.push(context(k));
 // });
 
-console.log(frames);
+console.log(require);
 
-// const routersList: any = [];
-// function importAll(r: any) {
-//   r.keys().forEach((key: any) => routersList.push(r(key).default) || r(key));
-// }
-// const getAllRouter = require.context('./src/models', false, /\.js$/);
+const routersList: any = [];
+function importAll(r: any) {
+  r.keys().forEach((key: any) => routersList.push(r(key).default) || r(key));
+}
+const getAllRouter = require.context('./src/models', false, /\.js$/);
 
-// importAll(getAllRouter);
+importAll(getAllRouter);
 // console.log(routersList);
 
 const basePath = '/admin';

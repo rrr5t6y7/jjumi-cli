@@ -6,7 +6,10 @@
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "upload": "cross-env NODE_ENV=production umi build && chmod u+x ./deploy.sh && ./deploy.sh",
+    "onlyupload": "./deploy.sh",
+    "link":"ssh root@59.110.217.39"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -46,6 +49,8 @@
     "prettier": "^2.2.0",
     "react": "17.x",
     "react-dom": "17.x",
+    "shelljs": "^0.8.4",
+    "ssh2-sftp-client": "^6.0.1",
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
   }
